@@ -1,0 +1,52 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: relative; /* Añade posición relativa para alinear el borde inferior */
+  border-bottom: 2px solid transparent; /* Borde inferior inicial transparente */
+  transition: border-bottom 0.3s ease-out; /* Transición para el borde inferior */
+  color: aliceblue;
+  background-color: #131313;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list li {
+  margin-left: 10px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-list a::after {
+  content: '';
+  position: absolute;
+  width: 0; /* Inicialmente el borde inferior está oculto */
+  height: 2px;
+  bottom: -2px;
+  left: 50%; /* Alinea el borde inferior al centro */
+  background-color: #e730ca; /* Color del borde inferior */
+  transition: width 0.3s ease-out, left 0.3s ease-out; /* Añadir transición para ancho y posición */
+}
+
+.nav-list a:hover {
+  color: #ff33de; /* Cambia el color del texto al pasar el ratón */
+}
+
+.nav-list a:hover::after {
+  width: 100%; /* Expande el borde inferior al 100% */
+  left: 0; /* Alinea el borde inferior completamente a la izquierda */
+}
+.navbar:hover {
+  border-bottom-color: #e730ca; /* Cambia el color del borde inferior al pasar el ratón */
+}
